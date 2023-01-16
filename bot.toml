@@ -1,0 +1,17 @@
+[discord]
+# Bot token
+token = ""
+
+# Bot status
+status = ""
+
+# Path and name of the database which will be used.
+database = ""
+
+[log]
+# Print coloured log messages. This will default 
+# to false when started as a daemon.
+color = true
+
+# Log levels: DEBUG | INFO | WARN | ERROR | FATAL
+level = "DEBUG"

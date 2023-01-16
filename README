@@ -1,0 +1,49 @@
+Endsinger - Discord bot
+=======================
+Endsinger is a discord bot written in go. 
+You can add channels with a maximum message age in days,
+all messages which are older than the specified limit will
+be deleted.
+
+
+Installation
+------------
+Simply build it with 'go build'.
+
+
+Running endsinger
+-----------------
+Endsinger can be run as daemon in the backgroung 
+(e.g. as system service) or via the commandline.
+
+Commandline flags are as follow:
+Usage of ./endsinger:
+  -c string
+        The path to the config file. (default "/usr/local/endsinger/endsinger.conf")
+  -d    Start the bot as a daemon process.
+  -p string
+        The path to the pid file. (default "/var/run/endsinger/endsinger.pid")
+
+If the bot is started in daemon mode, the 
+pid file will be written. If the process receives
+SIGTERM the daemon will exit.
+Moreover if the bot is started as daemon the log
+will be written via the syslog facility to the daemon log.
+
+
+Bot commands
+------------
+The bot supports the following commands:
+
+"/add [channel] [days]"       -> Add a channel to the database. If the 
+	command is executed without any optons, the current channel
+	with a limit of 5 days will be added to the database.
+
+"/remove [channel]"           -> Removes a channel from the database. 
+	Like the /add command, if no channel is specified, the channel
+	in which the command was executed will be removed from the database.
+
+"/update [days] [channel]"    -> Update the day limit of an added channel, 
+	if no channel is specified the current channel will be used.
+
+"/list"                       -> List all added channels.
