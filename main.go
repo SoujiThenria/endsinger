@@ -95,7 +95,7 @@ func main() {
 	}()
 
 	// Signal handler
-	log.Info("Endsinger started.")
+	log.Info("endsinger started.")
 	if conf.Daemon {
 		err := daemon.ServeSignals()
 		if err != nil {
